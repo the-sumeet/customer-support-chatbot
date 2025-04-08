@@ -5,7 +5,7 @@
 <div class="flex flex-col h-screen p-2">
 
 
-    <div class="flex flex-col h-full gap-2">
+    <div class="flex flex-col h-full gap-2 overflow-y-scroll" id="messages">
 
         {%for message in messages %}
         <div class="flex flex-col shadow w-full p-4 rounded border border-blue-500 {% if not message.fromAi  %} bg-blue-50  text-right {%else%} text-left  {%endif %}">
@@ -37,5 +37,12 @@
 
 
 </div>
+
+<script>
+
+    const messagesDiv = document.getElementById('messages');
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+</script>
 
 {% endblock %}
